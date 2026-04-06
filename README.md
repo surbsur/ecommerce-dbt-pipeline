@@ -15,12 +15,27 @@ This is **Project 2** in a two-project portfolio built on the same UK e-commerce
 
 ## Pipeline Architecture
 
-Raw Data (541,909 rows)
-└── stg_sales                    <- clean, validate, calculate revenue
-├── int_sales_by_country <- aggregate by market
-├── int_sales_by_month   <- aggregate by month + cumulative revenue
-└── mart_kpi_summary     <- final business KPIs
+**4-model medallion architecture** built on 541,909 raw transactions:
 
+**Layer 1 — Staging**
+`stg_sales` — removes cancellations, negatives and nulls. Casts types. Calculates revenue per row.
+
+**Layer 2 — Intermediate**
+`int_sales_by_country` — total revenue, orders, customers and avg order value per market
+
+`int_sales_by_month` — monthly revenue, active customers and cumulative revenue over time
+
+**Layer 3 — Mart**
+`mart_kpi_summary` — single-row KPI summary connecting directly to the Tableau dashboard
+
+### Layer Design
+
+| Layer | Model | Purpose |
+|-------|-------|---------|
+| Staging | stg_sales | Remove cancellations, negatives, nulls. Cast types. Calculate revenue. |
+| Intermediate | int_sales_by_country | Revenue, orders, customers, avg order value per country |
+| Intermediate | int_sales_by_month | Monthly revenue, active customers, cumulative revenue |
+| Mart | mart_kpi_summary | Single-row KPI summary for dashboards |
 ### Layer Design
 
 | Layer | Model | Purpose |
