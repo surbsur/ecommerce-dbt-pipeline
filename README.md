@@ -69,27 +69,6 @@ This is **Project 2** in a two-project portfolio built on the same UK e-commerce
 
 ---
 
-## Project Structure
-
-ecommerce-dbt-pipeline/
-├── models/
-│   ├── staging/
-│   │   └── stg_sales.sql
-│   ├── intermediate/
-│   │   ├── int_sales_by_country.sql
-│   │   └── int_sales_by_month.sql
-│   └── mart/
-│       └── mart_kpi_summary.sql
-├── exports/
-│   ├── kpi_summary.csv
-│   ├── sales_by_country.csv
-│   └── sales_by_month.csv
-├── seeds/
-│   └── sales.csv              <- excluded from git (541k rows)
-├── dbt_project.yml
-└── README.md
-
----
 
 
 
