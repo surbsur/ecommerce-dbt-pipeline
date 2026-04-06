@@ -76,6 +76,20 @@ ecommerce-dbt-pipeline/
 
 ---
 
+
+
+## Dashboard
+
+View the interactive Tableau dashboard built from the dbt pipeline output:
+
+[E-Commerce Sales Analytics — Live Dashboard](https://public.tableau.com/app/profile/surya.surendran4916/viz/E-CommerceSalesAnalyticsdbtPipeline/E-CommerceSalesAnalyticsdbtPipeline)
+
+The dashboard shows:
+- KPI Summary — Total Revenue, Orders, Customers, Avg Order Value
+- Monthly Revenue Trend (2010–2011)
+- Top 10 Countries by Revenue
+- 
+
 ## How to Run This Project
 
 ### Prerequisites
